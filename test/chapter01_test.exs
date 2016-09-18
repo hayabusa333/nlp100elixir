@@ -6,7 +6,7 @@ defmodule Chapter01Test do
     assert "desserts" == Nlp100elixir.Chapter01.ex00
   end
 
-  test "test01" do
+  test "ex01" do
     assert "パトカー" == Nlp100elixir.Chapter01.ex01
   end
 end
