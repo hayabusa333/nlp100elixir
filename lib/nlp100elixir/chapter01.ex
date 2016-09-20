@@ -23,4 +23,8 @@ defmodule Nlp100elixir.Chapter01 do
          end
        end)
   end
+
+  def ex07(x, y, z) do
+    "#{x}時の#{y}は#{z}"
+  end
 end
