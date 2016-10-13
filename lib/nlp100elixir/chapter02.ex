@@ -9,4 +9,9 @@ defmodule Nlp100elixir.Chapter02 do
       split_count
     end
   end
+
+  def ex11 do
+    {:ok, contents} = File.read "hightemp.txt"
+    String.replace(contents,"\t"," ")
+  end
 end
