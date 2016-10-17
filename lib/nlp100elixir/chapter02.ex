@@ -43,4 +43,22 @@ defmodule Nlp100elixir.Chapter02 do
    File.close col1
    File.close col2
   end
+
+  def ex13 do
+    {:ok, col1} = File.read "col1.txt"
+    {:ok, col2} = File.read "col2.txt"
+    {:ok, marge} = File.open "marge.txt", [:write]
+
+    split_col1_file = String.split(col1, "\n")
+    split_col2_file = String.split(col2, "\n")
+
+    split_col1_file
+    |> Enum.with_index
+    |> Enum.reduce( [], fn(x, acc) ->
+      if elem(x, 0) != "" and  Enum.at(split_col2_file, elem(x, 1)) != "" do
+        IO.binwrite marge, elem(x, 0) <> "\t" <> Enum.at(split_col2_file, elem(x, 1)) <> "\n"
+      end
+    end)
+    File.close marge
+  end
 end
