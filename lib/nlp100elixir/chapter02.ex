@@ -61,4 +61,12 @@ defmodule Nlp100elixir.Chapter02 do
     end)
     File.close marge
   end
+
+  def ex14(args) do
+    {:ok, contents} = File.read "hightemp.txt"
+    split_file = String.split(contents, "\n")
+
+    Enum.slice(split_file, 0, args)
+    |> Enum.each(fn(x) -> IO.puts x end)
+  end
 end
